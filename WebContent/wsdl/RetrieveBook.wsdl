@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.bookstore.gr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.bookstore.gr" xmlns:intf="http://ws.bookstore.gr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.bookstore.gr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="show_book">
+    <complexType>
+     <sequence>
+      <element name="title" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="show_bookResponse">
+    <complexType>
+     <sequence>
+      <element name="show_bookReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getQuantiy">
+    <complexType>
+     <sequence>
+      <element name="title" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getQuantiyResponse">
+    <complexType>
+     <sequence>
+      <element name="getQuantiyReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="check_availability">
+    <complexType>
+     <sequence>
+      <element name="title" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="check_availabilityResponse">
+    <complexType>
+     <sequence>
+      <element name="check_availabilityReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="show_bookRequest">
+
+      <wsdl:part element="impl:show_book" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="check_availabilityRequest">
+
+      <wsdl:part element="impl:check_availability" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="check_availabilityResponse">
+
+      <wsdl:part element="impl:check_availabilityResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getQuantiyRequest">
+
+      <wsdl:part element="impl:getQuantiy" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getQuantiyResponse">
+
+      <wsdl:part element="impl:getQuantiyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="show_bookResponse">
+
+      <wsdl:part element="impl:show_bookResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RetrieveBook">
+
+      <wsdl:operation name="show_book">
+
+         <wsdl:input message="impl:show_bookRequest" name="show_bookRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:show_bookResponse" name="show_bookResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getQuantiy">
+
+         <wsdl:input message="impl:getQuantiyRequest" name="getQuantiyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getQuantiyResponse" name="getQuantiyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="check_availability">
+
+         <wsdl:input message="impl:check_availabilityRequest" name="check_availabilityRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:check_availabilityResponse" name="check_availabilityResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RetrieveBookSoapBinding" type="impl:RetrieveBook">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="show_book">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="show_bookRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="show_bookResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getQuantiy">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getQuantiyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getQuantiyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="check_availability">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="check_availabilityRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="check_availabilityResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RetrieveBookService">
+
+      <wsdl:port binding="impl:RetrieveBookSoapBinding" name="RetrieveBook">
+
+         <wsdlsoap:address location="http://localhost:8080/Bookstore/services/RetrieveBook"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

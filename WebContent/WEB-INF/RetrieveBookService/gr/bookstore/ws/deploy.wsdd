@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from RetrieveBookService WSDL service -->
+
+  <service name="RetrieveBook" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.bookstore.gr"/>
+      <parameter name="wsdlServiceElement" value="RetrieveBookService"/>
+      <parameter name="schemaQualified" value="http://ws.bookstore.gr"/>
+      <parameter name="wsdlServicePort" value="RetrieveBook"/>
+      <parameter name="className" value="gr.bookstore.ws.RetrieveBook"/>
+      <parameter name="wsdlPortType" value="RetrieveBook"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ws.bookstore.gr" xmlns:retNS="http://ws.bookstore.gr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="show_book" qname="operNS:show_book" returnQName="retNS:show_bookReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ws.bookstore.gr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.bookstore.gr" xmlns:retNS="http://ws.bookstore.gr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getQuantiy" qname="operNS:getQuantiy" returnQName="retNS:getQuantiyReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://ws.bookstore.gr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ws.bookstore.gr" xmlns:retNS="http://ws.bookstore.gr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="check_availability" qname="operNS:check_availability" returnQName="retNS:check_availabilityReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://ws.bookstore.gr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getQuantiy check_availability show_book"/>
+
+  </service>
+</deployment>
