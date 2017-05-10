@@ -21,11 +21,11 @@ public class BookManager {
 		    String book;
 		    book="eurotrip";
 		    System.out.println("hello world\n");
-		
+		    String sql="SELECT id FROM Book WHERE title LIKE ?";
 			try {
 				/*SELECT * FROM `Book` WHERE title= :title and quantity>0*/
-				PreparedStatement preparedStatement=connection.prepareStatement("SELECT id FROM Book where title=?");
-				preparedStatement.setString(1, title);
+				PreparedStatement preparedStatement=connection.prepareStatement(sql);
+				preparedStatement.setString(1, "%"+ title+"%");
 				ResultSet rs=preparedStatement.executeQuery();
 				
 				while ( rs.next() ) {
