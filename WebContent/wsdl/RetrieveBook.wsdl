@@ -4,6 +4,20 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://ws.bookstore.gr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getQuantiy">
+    <complexType>
+     <sequence>
+      <element name="title" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getQuantiyResponse">
+    <complexType>
+     <sequence>
+      <element name="getQuantiyReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
    <element name="check_availability">
     <complexType>
      <sequence>
@@ -28,21 +42,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="show_bookResponse">
     <complexType>
      <sequence>
-      <element name="show_bookReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getQuantiy">
-    <complexType>
-     <sequence>
-      <element name="title" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="getQuantiyResponse">
-    <complexType>
-     <sequence>
-      <element name="getQuantiyReturn" type="xsd:int"/>
+      <element name="show_bookReturn" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
@@ -99,6 +99,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="RetrieveBook">
 
+      <wsdl:operation name="getQuantiy">
+
+         <wsdl:input message="impl:getQuantiyRequest" name="getQuantiyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getQuantiyResponse" name="getQuantiyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
       <wsdl:operation name="check_availability">
 
          <wsdl:input message="impl:check_availabilityRequest" name="check_availabilityRequest">
@@ -123,23 +135,29 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="getQuantiy">
-
-         <wsdl:input message="impl:getQuantiyRequest" name="getQuantiyRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:getQuantiyResponse" name="getQuantiyResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
    </wsdl:portType>
 
    <wsdl:binding name="RetrieveBookSoapBinding" type="impl:RetrieveBook">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getQuantiy">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getQuantiyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getQuantiyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="check_availability">
 
@@ -170,24 +188,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="show_bookResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="getQuantiy">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="getQuantiyRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="getQuantiyResponse">
 
             <wsdlsoap:body use="literal"/>
 

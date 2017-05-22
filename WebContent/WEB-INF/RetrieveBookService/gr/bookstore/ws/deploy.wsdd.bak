@@ -20,13 +20,13 @@
       <parameter name="className" value="gr.bookstore.ws.RetrieveBookSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="RetrieveBook"/>
       <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getQuantiy" qname="operNS:getQuantiy" xmlns:operNS="http://ws.bookstore.gr" returnQName="retNS:getQuantiyReturn" xmlns:retNS="http://ws.bookstore.gr" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:title" xmlns:pns="http://ws.bookstore.gr" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
       <operation name="check_availability" qname="operNS:check_availability" xmlns:operNS="http://ws.bookstore.gr" returnQName="retNS:check_availabilityReturn" xmlns:retNS="http://ws.bookstore.gr" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:title" xmlns:pns="http://ws.bookstore.gr" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="show_book" qname="operNS:show_book" xmlns:operNS="http://ws.bookstore.gr" returnQName="retNS:show_bookReturn" xmlns:retNS="http://ws.bookstore.gr" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:title" xmlns:pns="http://ws.bookstore.gr" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
-      <operation name="getQuantiy" qname="operNS:getQuantiy" xmlns:operNS="http://ws.bookstore.gr" returnQName="retNS:getQuantiyReturn" xmlns:retNS="http://ws.bookstore.gr" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      <operation name="show_book" qname="operNS:show_book" xmlns:operNS="http://ws.bookstore.gr" returnQName="retNS:show_bookReturn" xmlns:retNS="http://ws.bookstore.gr" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:title" xmlns:pns="http://ws.bookstore.gr" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="getQuantiy check_availability show_book"/>

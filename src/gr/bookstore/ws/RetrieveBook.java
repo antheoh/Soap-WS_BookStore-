@@ -17,9 +17,9 @@ public class RetrieveBook implements Books_IF {
 	}
 	
 	@Override
-	public String show_book(String title) {
+	public int show_book(String title) {
 		// TODO Auto-generated method stub
-		return "The title of the book is:"+bm.display_info_books(title);
+		return bm.display_isbn(title);
 	}
 
 }

@@ -14,6 +14,11 @@ public class Book {
 		this.price = price;
 	}
 
+	public Book(int book) {
+		// TODO Auto-generated constructor stub
+		this.isbn=book;
+	}
+
 	public int getIsbn() {
 		return isbn;
 	}
