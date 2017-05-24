@@ -42,7 +42,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="show_bookResponse">
     <complexType>
      <sequence>
-      <element name="show_bookReturn" type="xsd:int"/>
+      <element name="show_bookReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>

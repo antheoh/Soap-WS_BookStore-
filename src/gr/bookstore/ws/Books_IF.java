@@ -18,6 +18,6 @@ public interface Books_IF {
 	int check_availability(String title);
 	
 	@WebMethod
-	public int show_book(String title);
+	public String show_book(String title);
 
 }

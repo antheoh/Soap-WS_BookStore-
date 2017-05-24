@@ -16,12 +16,12 @@ public class BookManager {
 	}
 	
 	
-	public int  display_isbn(String title)
+	public String  display_isbn(String title)
 	{
-		    int book;
-		    book=0;
+		    String book;
+		    book="";
 		    System.out.println("hello world\n");
-		    String sql="SELECT isbn FROM Book WHERE title LIKE ? AND quantity>0";
+		    String sql="SELECT id FROM Book WHERE title LIKE ? AND quantity>0";
 			try {
 				/*SELECT * FROM `Book` WHERE title= :title and quantity>0*/
 				PreparedStatement preparedStatement=connection.prepareStatement(sql);
@@ -29,7 +29,7 @@ public class BookManager {
 				ResultSet rs=preparedStatement.executeQuery();
 				
 				while ( rs.next() ) {					
-					book=rs.getInt("isbn");
+					book=rs.getString("id");
 					
 				}
 			} catch (SQLException e) {

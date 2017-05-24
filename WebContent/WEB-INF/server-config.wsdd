@@ -39,7 +39,7 @@
   <ns1:operation name="check_availability" qname="ns2:check_availability" returnQName="ns2:check_availabilityReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns2:title" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="show_book" qname="ns3:show_book" returnQName="ns3:show_bookReturn" returnType="xsd:int" soapAction="" xmlns:ns3="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="show_book" qname="ns3:show_book" returnQName="ns3:show_bookReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns3:title" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getQuantiy check_availability show_book"/>

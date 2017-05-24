@@ -16,7 +16,7 @@
       <operation xmlns:operNS="http://ws.bookstore.gr" xmlns:retNS="http://ws.bookstore.gr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="check_availability" qname="operNS:check_availability" returnQName="retNS:check_availabilityReturn" returnType="rtns:int" soapAction="">
         <parameter xmlns:pns="http://ws.bookstore.gr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
       </operation>
-      <operation xmlns:operNS="http://ws.bookstore.gr" xmlns:retNS="http://ws.bookstore.gr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="show_book" qname="operNS:show_book" returnQName="retNS:show_bookReturn" returnType="rtns:int" soapAction="">
+      <operation xmlns:operNS="http://ws.bookstore.gr" xmlns:retNS="http://ws.bookstore.gr" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="show_book" qname="operNS:show_book" returnQName="retNS:show_bookReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://ws.bookstore.gr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
       </operation>
       <parameter name="allowedMethods" value="getQuantiy check_availability show_book"/>
