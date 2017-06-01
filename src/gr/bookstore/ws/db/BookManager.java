@@ -40,9 +40,16 @@ public class BookManager {
 			return book;
 	}
 	
-	
-	
-	
-	
-	
+	public void reduce(String title)
+	{
+		String sql="UPDATE Book SET quantity=(quantity-1)  WHERE title=?";
+		
+		try {
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);			
+			preparedStatement.setString(1, title);
+			preparedStatement.executeUpdate();
+		}catch ( SQLException e) {
+			e.printStackTrace();
+		}		
+	}	
 }

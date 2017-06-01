@@ -21,5 +21,10 @@ public class RetrieveBook implements Books_IF {
 		// TODO Auto-generated method stub
 		return bm.display_isbn(title);
 	}
-
+	
+	
+	public void recude_quantity(String title) {
+		bm.reduce(title);		
+	}
+	
 }

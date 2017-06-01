@@ -33,16 +33,19 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="RetrieveBook" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="getQuantiy" qname="ns1:getQuantiy" returnQName="ns1:getQuantiyReturn" returnType="xsd:int" soapAction="" xmlns:ns1="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:title" type="xsd:string"/>
+  <ns2:operation name="recude_quantity" qname="ns1:recude_quantity" soapAction="" xmlns:ns1="http://ws.bookstore.gr" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:title" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns2:operation>
-  <ns1:operation name="check_availability" qname="ns2:check_availability" returnQName="ns2:check_availabilityReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="getQuantiy" qname="ns2:getQuantiy" returnQName="ns2:getQuantiyReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns2:title" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="show_book" qname="ns3:show_book" returnQName="ns3:show_bookReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ns1:operation name="check_availability" qname="ns3:check_availability" returnQName="ns3:check_availabilityReturn" returnType="xsd:int" soapAction="" xmlns:ns3="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
    <ns1:parameter qname="ns3:title" type="xsd:string"/>
   </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="getQuantiy check_availability show_book"/>
+  <ns1:operation name="show_book" qname="ns4:show_book" returnQName="ns4:show_bookReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://ws.bookstore.gr" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:title" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="getQuantiy check_availability recude_quantity show_book"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="RetrieveBook"/>
   <ns1:parameter name="className" value="gr.bookstore.ws.RetrieveBook"/>

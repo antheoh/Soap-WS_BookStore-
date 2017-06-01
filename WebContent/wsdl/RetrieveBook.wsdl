@@ -4,6 +4,16 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://ws.bookstore.gr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="recude_quantity">
+    <complexType>
+     <sequence>
+      <element name="title" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="recude_quantityResponse">
+    <complexType/>
+   </element>
    <element name="getQuantiy">
     <complexType>
      <sequence>
@@ -65,9 +75,25 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="recude_quantityRequest">
+
+      <wsdl:part element="impl:recude_quantity" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="check_availabilityResponse">
 
       <wsdl:part element="impl:check_availabilityResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="recude_quantityResponse">
+
+      <wsdl:part element="impl:recude_quantityResponse" name="parameters">
 
       </wsdl:part>
 
@@ -98,6 +124,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </wsdl:message>
 
    <wsdl:portType name="RetrieveBook">
+
+      <wsdl:operation name="recude_quantity">
+
+         <wsdl:input message="impl:recude_quantityRequest" name="recude_quantityRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:recude_quantityResponse" name="recude_quantityResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="getQuantiy">
 
@@ -140,6 +178,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <wsdl:binding name="RetrieveBookSoapBinding" type="impl:RetrieveBook">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="recude_quantity">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="recude_quantityRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="recude_quantityResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="getQuantiy">
 

@@ -19,5 +19,8 @@ public interface Books_IF {
 	
 	@WebMethod
 	public String show_book(String title);
+	
+	@WebMethod
+	public void recude_quantity(String title);
 
 }
