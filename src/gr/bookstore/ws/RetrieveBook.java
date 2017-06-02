@@ -6,7 +6,7 @@ public class RetrieveBook implements Books_IF {
 	BookManager bm=new BookManager();
 	@Override
 	public int getQuantiy(String title) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stubb
 		return 0;
 	}
 
