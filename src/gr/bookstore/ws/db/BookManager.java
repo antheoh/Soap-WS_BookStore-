@@ -15,6 +15,40 @@ public class BookManager {
 		this.connection=Database.getConnection();
 	}
 	
+	public int IsAvailable(String title)
+	{
+		String book;
+		int result,quan;
+	    book="";	
+	    quan=999;
+	    String sql="SELECT id FROM Book WHERE title LIKE ?";
+	    String sql_2="SELECT quantity FROM Book WHERE title LIKE ?";
+		try {			
+			PreparedStatement preparedStatement=connection.prepareStatement(sql);
+			PreparedStatement preparedStatement2=connection.prepareStatement(sql_2);
+			preparedStatement.setString(1, "%"+ title+"%");
+			preparedStatement2.setString(1, "%"+ title+"%");
+			ResultSet rs=preparedStatement.executeQuery();
+			ResultSet rs2=preparedStatement2.executeQuery();
+			while ( rs2.next() ) {					
+				quan=rs2.getInt("quantity");
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		
+		if ( quan<=0){
+			result=0;
+			return result;			
+		}
+		else {
+			result =1;
+			return result;
+		}		
+
+	}
 	
 	public String  display_isbn(String title)
 	{

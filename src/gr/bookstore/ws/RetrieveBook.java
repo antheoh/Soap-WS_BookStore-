@@ -12,8 +12,13 @@ public class RetrieveBook implements Books_IF {
 
 	@Override
 	public int check_availability(String title) {
-		// TODO Auto-generated method stub
-		return 2;
+		if (bm.IsAvailable(title)==1) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+		
 	}
 	
 	@Override
